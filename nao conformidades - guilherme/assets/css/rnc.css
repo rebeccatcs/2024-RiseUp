@@ -1,0 +1,330 @@
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão da página */
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 0; /* Remove o padding padrão do corpo */
+    background-color: #164095; /* Define a cor de fundo da página */
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Estiliza a barra lateral (sidebar) */
+.sidebar {
+    display: flex; /* Usa Flexbox para layout interno */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    width: min-content; /* Define a largura mínima necessária para o conteúdo */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    position: fixed; /* Fixa o menu na tela, independentemente do scroll */
+    background-color: #ffffff; /* Define a cor de fundo da barra lateral */
+    color: rgb(0, 0, 0); /* Define a cor do texto */
+    padding: 22px; /* Adiciona espaçamento interno ao redor do conteúdo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao lado da barra lateral para destaque */
+}
+
+/* Estiliza a imagem de login dentro da barra lateral */
+.sidebar h2 {
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o título */
+    margin-top: 2rem; /* Adiciona uma margem superior */
+}
+
+/* Estiliza a lista de itens na barra lateral */
+.sidebar ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão da lista */
+    display: flex; /* Usa Flexbox para layout interno */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: left; /* Centraliza os itens verticalmente */
+    align-items: left; /* Centraliza os itens horizontalmente */
+    height: 15rem; /* Define a altura da lista */
+}
+
+/* Estiliza cada item da lista na barra lateral */
+.sidebar ul li {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0; /* Adiciona margem vertical entre os itens */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o item */
+}
+
+/* Estiliza as imagens dentro dos itens da lista */
+.sidebar ul li {
+    transition: transform 0.6s ease; /* Adiciona uma transição suave ao transformar a imagem */
+}
+
+/* Adiciona efeito de zoom nas imagens ao passar o mouse sobre elas */
+.sidebar ul li:hover {
+    transform: scale(1.2); /* Aumenta a escala da imagem para 120% */
+}
+
+.sidebar li p {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.sidebar li img {
+    display: flex;
+    margin-top: 0.7rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 12.2rem; /* Margem esquerda para fazer espaço para a barra lateral */
+    flex: 1; /* Permite que o contêiner ocupe o espaço restante */
+    color: #fff; /* Define a cor do texto */
+    background-color: #123A8C;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: left;
+    margin-left: 10rem;
+    opacity: 0.6;
+}
+
+.home h3 {
+    margin-left: 1rem;
+}
+
+.chamados {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: left;
+    margin-left: 2rem;
+}
+
+.chamados h3 {
+    margin-left: 0.5rem;
+}
+
+.chamados img {
+    margin-bottom: 4px;
+}
+
+/* Estiliza o campo de entrada dentro da seção de entrada */
+.content label input {
+    padding: 8px; /* Adiciona espaçamento interno no input */
+    width: 25rem; /* Define a largura do campo do input*/
+    margin-top: 0.7rem;
+    border-radius: 5rem; /* Arredonda os cantos do input */
+    border: none; /* Remove a borda padrão */
+}
+
+/* Estiliza o contêiner principal da seção de entrada */
+.input-main {
+    margin-left: 50rem; /* Margem à esquerda para espaçamento */
+    display: flex;
+    flex-direction: row;
+
+}
+
+.usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vh;
+    margin-left: 2rem;
+    margin-bottom: 0.4rem;
+    border-radius: 1rem;
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.box {
+    font-size: 2rem;
+    font-family: Roboto,'Open Sans';
+    color: #A8A6A6;
+}
+
+.rnc {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem;
+    margin-left: 7rem;
+}
+
+.rnc-content {
+    display: flex;
+    width: 102rem;
+    height: 55.5rem;
+    background-color: #F2F2F2;
+    border-radius: 1rem;
+    flex-direction: column;
+
+}
+
+.upper-rnc {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    gap: 15rem;
+}
+
+
+.input-wrapper{
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px; 
+    border: none;
+    border: 2px solid #DADADA;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.input-wrapper i{
+    color: #123A8C;
+}
+
+.input-wrapper input{
+    border: none;
+    border-radius: 10px;
+    width: 30rem;
+    height: 2.5rem;
+    font-size: 20px; 
+}
+
+.input-wrapper input:focus-visible {
+    outline: none;
+}
+
+.rnc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: large;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.rnc-chamado-1 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 97.5rem;
+    height: 5rem;
+    color: #123A8C;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-1 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-1 .edit{
+    margin-left: 87.5rem;
+}
+
+.rnc-chamado-2 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 97.5rem;
+    height: 5rem;
+    color: #123A8C;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-2 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-2 .edit {
+    margin-left: 87.5rem;
+}
+
+.rnc-chamado-3 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 97.5rem;
+    height: 5rem;
+    color: #123A8C;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-3 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-3 .edit{
+    margin-left: 87.5rem;
+}
+
+.rnc-chamado-4 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; 
+    width: 97.5rem;
+    height: 5rem;
+    color: #123A8C;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-4 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-4 .edit{
+    margin-left: 87.5rem;
+}
+
+.rnc-chamado-5 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 97.5rem;
+    color: #123A8C;
+    height: 5rem;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-5 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-5 .edit{
+    margin-left: 87.5rem;
+}
+
+.rnc-chamado-6 {
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 97.5rem;
+    height: 5rem;
+    color: #123A8C;
+    background-color: #D9D9D9;
+}
+
+.rnc-chamado-6 p{
+    margin-left: 15px;
+}
+
+.rnc-chamado-6 .edit{
+    margin-left: 87.5rem;
+}
