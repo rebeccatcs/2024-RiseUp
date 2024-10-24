@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="shortcut icon" href="assets/images/fsph.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <!-- Título da barra lateral com um logotipo -->
+            <h2>
+                <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
+            </h2>
+            <!-- Lista de ícones de navegação -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="rnc.html">
+                            <img src="https://img.icons8.com/?size=100&id=60673&format=png&color=000000"
+                                alt="Imagem de um círculo com sinal de exclamação em seu interior" width="auto"
+                                height="25rem">
+                            Chamados
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
+                                alt="Imagem do sinal de adição" width="auto" height="25rem">
+                            Criar chamado
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perfisdeacesso.html">
+                            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=000000"
+                                alt="Imagem de um boneco" width="auto" height="25rem">
+                            Usuários
+                        </a>
+                    </li>
+                    <li>
+                        <a href="depart1.html">
+                            <img src="https://img.icons8.com/?size=100&id=Ichz7JPUz9qU&format=png&color=000000"
+                                alt="Imagem de uma engrenagem" width="auto" height="25rem">
+                            Departamentos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="edit.html">
+                            <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000"
+                                alt="Imagem de um lápis escrevendo em um papel" width="auto" height="25rem">
+                            Editar
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="content">
+            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Icon casa"
+                width="auto" height="25rem">
+            <h3>
+                <span style="opacity: 0.6;">
+                    <a href="index.html">Home</a>
+                </span>
+            </h3>
+
+            <span class="vertical-bar"></span>
+
+            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=FFFFFF" alt="Ícone de usuário"
+                width="auto" height="25rem">
+            <a href="perfisdeacesso.html"><h3><span style="opacity: 0.6;">Usuários</span></h3></a>
+
+            <div class="vertical-bar"></div>
+
+            <h3>Administrador</h3>
+        </section>
+
+        <section class="box-content">
+            <div class="usercontainer">
+                <div class="user-pic">
+                    <img src="assets/images/laviniamarques.png" id="userpic" width="auto" height="160rem">
+                </div>
+                <div class="user-info">
+                    <h2>Lavínia Marques</h2>
+                    <h4>Email:</h4>
+                    <p>lavinia.marques@souparreira.com.br</p>
+                    <h4>Departamento:</h4>
+                    <p>Coordenação Financeira</p>
+                    <h4>Perfil:</h4>
+                    <p>Administrador <b>(Chefe de departamento)</b></p>
+                </div>
+                <div class="config">
+                    <img src="https://img.icons8.com/?size=100&id=9110&format=png&color=000000" id="userpic"
+                        width="auto" height="25rem">
+                </div>
+            </div>
+            <div class="container">
+                <div class="tab" onclick="toggleTab()">
+                    <p>Não conformidades cadastradas</p>
+                    <img src="https://img.icons8.com/?size=100&id=15S8NtzAU4hO&format=png&color=000000"
+                        class="icon-seta" id="rotateIcon" width="auto" height="25rem">
+                </div>
+
+                <div class="tabcont" id="tabContent">
+                    <p>Não há não conformidades registradas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/script/admin.js"></script>
+</body>
+
+</html>
