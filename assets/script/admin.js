@@ -1,6 +1,7 @@
 function toggleTab() {
     const content = document.getElementById('tabContent');
     const icon = document.getElementById('rotateIcon');
+    const teste = "";
 
     // Alterna a visibilidade do conteúdo
     if (content.style.display === 'none' || content.style.display === '') {
