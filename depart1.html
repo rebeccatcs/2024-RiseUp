@@ -79,33 +79,66 @@
             <h3>Departamentos</h3>
         </section>
 
+        <div id="department-form" style="display: none;">
+            <input type="text" id="new-department-input" placeholder="Nome do novo departamento">
+            <div class="botoes">
+            <button id="submit-department">Adicionar</button>
+            <button id="cancel-department">Cancelar</button>
+            </div>
+        </div>
+        
         <section class="box-content">
-            <div class="departments-container">
-                <h1>DEPARTAMENTOS</h1>
-                <table class="departments-table">
-                    <tr>
-                        <td><a href="depart2.html">Diretoria Geral (DIGER)</a></td>
-                        <td><i class="bi bi-pencil-square"></i></td>
-                        <td><i class="bi bi-trash"></i></td>
-                    </tr>
-            </div>
-            <tr>
-                <td><a href="depart3.html">Diretoria Administrativa e Financeira (DIRAF)</a></td>
-                <td><i class="bi bi-pencil-square"></i></td>
-                <td><i class="bi bi-trash"></i></td>
-            </tr>
-            <tr>
-                <td><a href="depart4.html">Diretoria Operacional (DIROP)</a></td>
-                <td><i class="bi bi-pencil-square"></i></td>
-                <td><i class="bi bi-trash"></i></td>
-            </tr>
-            </table>
-            <div class="btn-box">
-                <button class="add-department-btn">ADICIONAR</button>
-            </div>
+            <div class="dep-content">
+                <div class="dep-a">
+                    <h1>DEPARTAMENTOS</h1>
+                </div>
+                <div class="departamentos">
+
+                    <div class="departamentos-item">
+                        <p><a href="depart2.html">Diretoria Geral (DIGER)</a></p>
+                        <div class="departamentos-config">
+                            <div class="edit-options">
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem"></a>
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="departamentos-item">
+                        <p><a href="depart3.html">Diretoria Administrativa e Financeira (DIRAF)</a></p>
+                        <div class="departamentos-config">
+                            <div class="edit-options">
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem"></a>
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="departamentos-item">
+                        <p><a href="depart4.html">Diretoria Operacional (DIROP)</a></p>
+                        <div class="departamentos-config">
+                            <div class="edit-options">
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem"></a>
+                                <a href="#"><img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <span class="btn-add">
+                    <button id="add-button">ADICIONAR</button>
+                </span>
             </div>
         </section>
     </main>
+    <div id="confirm-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Tem certeza que deseja excluir este departamento?</h3>
+            <button id="confirm-delete">Sim</button>
+            <button id="cancel-delete">Não</button>
+        </div>
+    </div>
+
+    <script src="assets/script/depart1.js"></script>
 </body>
 
 </html>

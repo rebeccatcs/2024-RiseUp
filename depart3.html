@@ -87,6 +87,14 @@
             <h3>Diretoria Administrativa e Financeira (DIRAF)</h3>
         </section>
 
+        <div id="department-form" style="display: none;">
+            <input type="text" id="new-department-input" placeholder="Nome do novo departamento">
+            <div class="botoes">
+            <button id="submit-department">Adicionar</button>
+            <button id="cancel-department">Cancelar</button>
+            </div>
+        </div>
+
         <section class="box-content">
             <div class="dep-content">
                 <div class="dep-a">
@@ -185,8 +193,15 @@
             </div>
         </section>
     </main>
+    <div id="confirm-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Tem certeza que deseja excluir este departamento?</h3>
+            <button id="confirm-delete">Sim</button>
+            <button id="cancel-delete">Não</button>
+        </div>
+    </div>
 
-    <script src="assets/script/tnc.js"></script>
+    <script src="assets/script/depart3.js"></script>
 </body>
 
 </html>
