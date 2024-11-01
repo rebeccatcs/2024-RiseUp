@@ -43,7 +43,6 @@ header {
 
 /* Estiliza a lista de itens na barra lateral */
 .sidebar ul {
-.sidebar ul {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -185,7 +184,6 @@ main {
 }
 
 .dep-content {
-.dep-content {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -273,6 +271,8 @@ main {
 .departamentos {
     display: flex;
     flex-direction: column;
+}
+
 .aber-title h3 {
     margin-top: 0.5rem;
     opacity: 0.6;
