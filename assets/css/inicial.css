@@ -1,0 +1,160 @@
+body {
+    width: 100vw;
+    display: flex;
+    background-color: #164095;
+}
+
+/* Header */
+
+/* Side Bar */
+
+header {
+    width: 15%;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 15%; 
+    height: 100vh; 
+    position: fixed; 
+    background-color: #fff; 
+    gap: 1.5rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.sidebar h2 {
+    cursor: pointer; 
+    margin-top: 2rem; 
+}
+
+/* Estiliza a lista de itens na barra lateral */
+.sidebar ul { 
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0;
+}
+
+/* Estiliza cada item da lista na barra lateral */
+.sidebar ul li {
+    display: flex;
+    cursor: pointer; 
+    justify-content: flex-start;
+    transition: transform 0.6s ease; 
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar ul li:hover {
+    transform: scale(1.2); 
+}
+
+/* Fim SideBar */
+
+/* Fim Header */
+
+/* Main */
+
+main {
+    width: 85%;
+    height: 100vh;
+}
+
+/* Barra Superior */
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+    padding-left: 5rem;
+    gap: 1rem;
+    color: #fff; 
+    background-color: #123A8C;
+}
+
+.content a {
+    color: #fff;
+}
+
+.vertical-bar {
+    width: 2px; 
+    height: 22px; 
+    background-color: white; 
+    margin: 0 10px; 
+    transform: rotate(28deg); 
+}
+
+/* Fim Barra superior */
+
+/*Tabela*/
+.table-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.table-container {
+    background-color: #fff;
+    width: 85%;
+    padding: 2rem;
+    border-radius: 8px;
+    gap: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h3 {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: #979797;
+    width: 400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #003366;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+table td {
+    background-color: #fff;
+    font-size: 1em;
+}
+
+.id-column {
+    width: 10%;
+}
+
+.req-column, .title-column {
+    width: 45%;
+}
+
+.titulo-link {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.titulo-link:hover {
+    text-decoration: underline;
+}
