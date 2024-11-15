@@ -8,18 +8,6 @@ let edit_items = document.querySelectorAll('#btn-edit')
 let edit_box = document.querySelector('.edit-popup')
 let confirm = document.querySelector('#confirm-gds')
 
-confirm.addEventListener('click', (e) => {
-        const event = e.target.closest('li');
-        const novoNome = document.querySelector('#nome-gds-edit').value;
-        currentItemToEdit.querySelector('.content-left p').textContent = novoNome;
-
-        // Atualiza a cor
-        const novaCor = document.querySelector('#color-gds-edit').value;
-        newLi.querySelector('.content-left div').style.backgroundColor = novaCor;
-        // Fecha o modal de edição
-        edit_box.style.display = 'none';
-});
-
 adicionar.addEventListener('click', () => {
     add_box.style.display = 'flex';
 })
@@ -92,7 +80,10 @@ function editItem(edit_items) {
 }
 
 confirm.addEventListener('click', () => {
-    if (currentItemToEdit) {
+    if (document.querySelector('#nome-gds-edit').value === '') {
+        alert('Campo de nome vazio!')
+    }
+    else if (currentItemToEdit) {
         // Atualiza o nome
         const novoNome = document.querySelector('#nome-gds-edit').value;
         currentItemToEdit.querySelector('.content-left p').textContent = novoNome;

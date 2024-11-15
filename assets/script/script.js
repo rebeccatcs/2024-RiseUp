@@ -23,3 +23,31 @@ var parametros = "nome=Joao&email=joao@example.com";
 xhr.send(parametros);
   }
 
+
+
+// Função para validar o login
+function validarLogin() {
+var usuario = document.getElementById('Login').value;
+var senha = document.getElementById('Senha').value;
+var mensagemErro = document.getElementById('erroMensagem');
+
+// Limpar mensagem de erro anterior
+mensagemErro.innerHTML = "";
+
+// Verifica se os campos estão vazios
+if (usuario === "" || senha === "") {
+  mensagemErro.innerHTML = "<span style='color:red;'>Por favor, preencha todos os campos.</span>";
+  return false; // Impede o envio do formulário
+}
+
+// Verifica se as credenciais são 'admin' e 'admin'
+if (usuario === "admin" && senha === "admin") {
+  // Redireciona para a página inicial
+  window.location.href = "inicial.html";
+ return false; // Impede o envio do formulário e a ação padrão
+} else {
+  // Exibe mensagem de erro se as credenciais estiverem incorretas
+  mensagemErro.innerHTML = "<span style='color:red;'>Usuário ou senha incorretos.</span>";
+  return false; // Impede o envio do formulário
+}
+}

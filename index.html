@@ -35,7 +35,7 @@
         </div>
 
     </header>
-    <form>
+    <form onsubmit="return validarLogin()">
         <div class="tela-login">
             <h2>Iniciar sessão:</h2>
 
@@ -45,8 +45,14 @@
             <br><br>
             <input type="checkbox" id="lembrar">
             <label for="lembrar">Lembrar-me</label>
-            <button type="button" class="botao" id="acessar" onclick="window.location.href='inicial.html'">Acessar</button>
+            <br><br>
+
+            <button type="submit" class="botao" id="acessar">Acessar</button>
+            
+            <!-- Mensagem de erro -->
+            <div id="erroMensagem"></div>
         </div>
     </form>
+    <script src="assets/script/script.js"></script>
 </body>
 </html>
