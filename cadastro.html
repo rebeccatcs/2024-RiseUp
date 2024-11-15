@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="shortcut icon" href="assets/images/fsph.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
@@ -33,11 +32,11 @@
         </div>
 
     </header>
-    <form>
-        <div class="tela-login">
+    <form onsubmit="return validarCadastro()">
+        <div class="tela-cadastro">
             <h2>Cadastre-se:</h2>
 
-            <input type="text" placeholder="Nome de usuário" id="Login">
+            <input type="text" placeholder="Nome de usuário" id="Cadastro">
             <br><br>
             <input type="password" placeholder="Senha" id="Senha">
             <br><br>
@@ -45,9 +44,16 @@
             <br><br>
             <input type="checkbox" id="lembrar">
             <label for="lembrar">Lembrar-me</label>
-            <button type="button" class="botao" id="acessar" onclick="window.location.href='inicial.html'">Acessar</button>
+            <br><br>
+
+            <button type="submit" class="botao" id="acessar">Cadastrar</button>
+            
+            <!-- Mensagem de erro -->
+            <div id="erroMensagem"></div>
         </div>
     </form>
+
+    <script src="assets/script/cadastro.js"></script>
 </body>
 
 </html>

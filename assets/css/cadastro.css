@@ -69,7 +69,7 @@ header {
 
 /* Main */
 
-.tela-login {
+.tela-cadastro {
     background-color: white;
     width: min-content;
     padding: 4rem;
@@ -77,11 +77,11 @@ header {
     margin: 3rem auto 0;
 }
 
-.tela-login h2 {
+.tela-cadastro h2 {
     margin-bottom: 1rem;
 }
 
-#Login {
+#Cadastro {
     background-color: #F0F0F0;
     padding: 15px;
     letter-spacing: 1px;
@@ -94,7 +94,7 @@ header {
     width: 400px;
 }
 
-#Login::placeholder {
+#Cadastro::placeholder {
     color: #3156A0;
 }
 

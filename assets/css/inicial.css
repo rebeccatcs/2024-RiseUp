@@ -158,3 +158,37 @@ table td {
 .titulo-link:hover {
     text-decoration: underline;
 }
+
+
+@media screen and (max-width: 1200px) {
+
+
+    main {
+        width: 100%;
+        height: 100vh;
+    }
+
+    /* CABEÇALHO */
+    .sidebar {
+        display: none;
+    }
+    .content {
+        width: 140vw;
+    }
+    .content img, .content h3 {
+        display: none;
+    }
+    .content h2 {
+        display: block;
+    }
+
+    .table-div {
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    .table-container {
+        margin-left: 110px;
+        width: 100vw;
+    }
+}
