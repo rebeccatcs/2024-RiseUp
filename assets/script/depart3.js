@@ -1,79 +1,84 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const addButton = document.getElementById("add-button");
-    const departamentosContainer = document.querySelector(".departamentos");
-    const departmentForm = document.getElementById("department-form");
-    const newDepartmentInput = document.getElementById("new-department-input");
-    const submitButton = document.getElementById("submit-department");
-    const cancelButton = document.getElementById("cancel-department");
-    
-    const confirmModal = document.getElementById("confirm-modal");
-    const confirmDeleteButton = document.getElementById("confirm-delete");
-    const cancelDeleteButton = document.getElementById("cancel-delete");
-    
-    let currentEditingItem = null; 
-    let itemToDelete = null; 
+const addButton = document.getElementById("add-button");
+const departamentosContainer = document.querySelector(".departamentos");
 
-    addButton.addEventListener("click", function() {
-        currentEditingItem = null; 
-        newDepartmentInput.value = ''; 
-        departmentForm.style.display = 'flex'; 
-        newDepartmentInput.focus(); 
+// Função para adicionar eventos de edição e exclusão a um item de tarefa
+function addEventListenersToTaskItem(taskItem) {
+    const editButton = taskItem.querySelector(".edit-icon");
+    const deleteButton = taskItem.querySelector(".delete-icon");
+    const taskTitle = taskItem.querySelector("p");
+
+    // Evento de exclusão
+    deleteButton.addEventListener("click", () => {
+        departamentosContainer.removeChild(taskItem);
     });
 
-    submitButton.addEventListener("click", function() {
-        const newDepartmentName = newDepartmentInput.value.trim();
-        if (newDepartmentName) {
-            if (currentEditingItem) {
-                const departmentNameElement = currentEditingItem.querySelector("p a");
-                departmentNameElement.textContent = newDepartmentName;
-            } else {
-                const newDepartmentItem = document.createElement("div");
-                newDepartmentItem.classList.add("departamentos-item");
+    // Evento de edição
+    editButton.addEventListener("click", () => {
+        const isEditing = taskTitle.isContentEditable;
+        taskTitle.contentEditable = !isEditing;
+        taskTitle.focus();
 
-                newDepartmentItem.innerHTML = `
-                    <p><a href="#">${newDepartmentName}</a></p>
-                    <div class="departamentos-config">
-                        <div class="edit-options">
-                            <a href="#" class="edit-department"><img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem"></a>
-                            <a href="#" class="delete-department"><img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem"></a>
-                        </div>
-                    </div>
-                `;
-                departamentosContainer.appendChild(newDepartmentItem);
-            }
-            departmentForm.style.display = 'none'; 
-        }
+        // Alterna a classe para indicar que o item está em edição
+        taskTitle.classList.toggle("editing", !isEditing);
     });
+}
 
-    cancelButton.addEventListener("click", function() {
-        newDepartmentInput.value = '';
-        departmentForm.style.display = 'none';
-    });
+// Função para criar um novo item de tarefa dinamicamente
+function createTaskItem(title = "Título") {
+    const taskItem = document.createElement("div");
+    taskItem.classList.add("departamentos-item");
 
-    departamentosContainer.addEventListener("click", function(e) {
-        if (e.target.closest(".delete-department")) {
-            itemToDelete = e.target.closest(".departamentos-item");
-            confirmModal.style.display = 'flex'; 
-        }
+    const taskTitle = document.createElement("p");
+    taskTitle.textContent = title;
+    taskTitle.contentEditable = false;
 
-        if (e.target.closest(".edit-department")) {
-            currentEditingItem = e.target.closest(".departamentos-item"); 
-            const departmentNameElement = currentEditingItem.querySelector("p a");
-            newDepartmentInput.value = departmentNameElement.textContent; 
-            departmentForm.style.display = 'flex';
-        }
-    });
+    const configContainer = document.createElement("div");
+    configContainer.classList.add("departamentos-config");
 
-    confirmDeleteButton.addEventListener("click", function() {
-        if (itemToDelete) {
-            departamentosContainer.removeChild(itemToDelete); 
-            itemToDelete = null; 
-        }
-        confirmModal.style.display = 'none';
-    });
+    const caixaDepart1 = document.createElement("div");
+    caixaDepart1.classList.add("caixa-depart1");
+    caixaDepart1.textContent = "0";
 
-    cancelDeleteButton.addEventListener("click", function() {
-        confirmModal.style.display = 'none';
-        itemToDelete = null; 
-    });
+    const caixaDepart2 = document.createElement("div");
+    caixaDepart2.classList.add("caixa-depart2");
+    caixaDepart2.textContent = "0";
+
+    const editOptions = document.createElement("div");
+    editOptions.classList.add("edit-options");
+
+    const editButton = document.createElement("img");
+    editButton.src = "https://img.icons8.com/?size=100&id=114092&format=png&color=000000";
+    editButton.alt = "Editar";
+    editButton.classList.add("edit-icon", "icon");
+
+    const deleteButton = document.createElement("img");
+    deleteButton.src = "https://img.icons8.com/?size=100&id=14237&format=png&color=000000";
+    deleteButton.alt = "Excluir";
+    deleteButton.classList.add("delete-icon", "icon");
+
+    editOptions.appendChild(editButton);
+    editOptions.appendChild(deleteButton);
+
+    configContainer.appendChild(caixaDepart1);
+    configContainer.appendChild(caixaDepart2);
+    configContainer.appendChild(editOptions);
+
+    taskItem.appendChild(taskTitle);
+    taskItem.appendChild(configContainer);
+
+    departamentosContainer.appendChild(taskItem);
+
+    addEventListenersToTaskItem(taskItem);  // Adiciona os eventos ao novo item
+}
+
+// Adiciona evento para criar novo item ao clicar no botão de adicionar
+addButton.addEventListener("click", () => {
+    createTaskItem();
 });
+
+// Adiciona eventos de edição e exclusão para os itens já existentes na página
+console.log("Fazendo o registro nos existentes...");
+console.log(document.querySelectorAll(".departamentos-item"));
+document.querySelectorAll(".departamentos-item").forEach(addEventListenersToTaskItem);
+
+//1176 px 917px -> quebra de linha

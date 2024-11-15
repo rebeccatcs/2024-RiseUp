@@ -419,3 +419,22 @@ main {
     background-color: #dc3545;
     color: white;
 }
+
+.icon {
+    width: auto;
+    height: 25px; 
+}
+
+.edit-options img {
+    cursor: pointer;
+    transition: opacity 0.3s ease; 
+}
+
+.edit-options img:hover {
+    opacity: 0.7;
+}
+
+.editing {
+    border: 1px dashed #000;
+    padding: 2px;
+}
