@@ -1,0 +1,63 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="assets/css/projeto5.css">
+</head>
+<body>
+    <main class="kanban">
+
+        <!-- COLUMN 1 -->
+        <div class="kanban-column" id="em-aberto">
+            <div class="titulo1">
+                <h1>Em aberto</h1>
+            </div>
+
+            <div class="kanban-input">
+                <input type="text" id="taskInput" placeholder="Adicione uma nova tarefa">
+                <div id="spanBox"></div>
+                <button id="addTaskBtn">Adicionar Tarefa</button>
+            </div>
+
+            <div class="kanban-cards" id="kanbanCardsEmAberto">
+                <!-- Tarefas serão adicionadas aqui -->
+            </div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="kanban-column" id="bid">
+            <div class="titulo2">
+                <h1>Bid (Negociação)</h1>
+            </div>
+
+            <div class="kanban-cards">
+                <!-- Tarefas serão adicionadas aqui -->
+            </div>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="kanban-column" id="em-andamento">
+            <div class="titulo3">
+                <h1>Em andamento</h1>
+            </div>
+
+            <div class="kanban-cards">
+                <!-- Tarefas serão adicionadas aqui -->
+            </div>
+        </div>
+
+        <!-- COLUMN 4 -->
+        <div class="kanban-column" id="entregue">
+            <div class="titulo4">
+                <h1>Entregue</h1>
+            </div>
+
+            <div class="kanban-cards">
+                <!-- Tarefas serão adicionadas aqui -->
+            </div>
+        </div>
+
+    <script src="assets/js/projeto5.js" defer></script>
+</body>
+</html>
