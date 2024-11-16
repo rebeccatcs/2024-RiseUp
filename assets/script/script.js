@@ -1,53 +1,53 @@
-function loadDoc() {
-// Criando o objeto XMLHttpRequest
-var xhr = new XMLHttpRequest();
-
-// Definindo o tipo de requisição (POST) e o URL para onde os dados serão enviados
-xhr.open("POST", "http://localhost:8080/login", true);
-
-// Definindo o tipo de conteúdo da requisição (formulário URL-encoded)
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-// Definindo o que acontece quando a requisição for concluída
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    // Requisição bem-sucedida, processar a resposta
-    console.log(xhr.responseText); // Aqui você pode fazer algo com a resposta do servidor
-  }
-};
-
-// Preparando os dados para enviar (parâmetros do tipo chave=valor)
-var parametros = "nome=Joao&email=joao@example.com";
-
-// Enviando a requisição com os parâmetros
-xhr.send(parametros);
-  }
-
-
-
 // Função para validar o login
 function validarLogin() {
-var usuario = document.getElementById('Login').value;
-var senha = document.getElementById('Senha').value;
-var mensagemErro = document.getElementById('erroMensagem');
+  // Obtendo os valores do formulário
+  const username = document.getElementById("Login").value;
+  const password = document.getElementById("Senha").value;
 
-// Limpar mensagem de erro anterior
-mensagemErro.innerHTML = "";
+  // Mensagem de erro
+  const erroMensagem = document.getElementById("erroMensagem");
+  erroMensagem.textContent = ""; // Limpa a mensagem anterior
 
-// Verifica se os campos estão vazios
-if (usuario === "" || senha === "") {
-  mensagemErro.innerHTML = "<span style='color:red;'>Por favor, preencha todos os campos.</span>";
-  return false; // Impede o envio do formulário
-}
+  // Validação simples de campos vazios
+  if (!username || !password) {
+      erroMensagem.textContent = "Por favor, preencha todos os campos.";
+      erroMensagem.style.color = "red";
+      return false;
+  }
 
-// Verifica se as credenciais são 'admin' e 'admin'
-if (usuario === "admin" && senha === "admin") {
-  // Redireciona para a página inicial
-  window.location.href = "inicial.html";
- return false; // Impede o envio do formulário e a ação padrão
-} else {
-  // Exibe mensagem de erro se as credenciais estiverem incorretas
-  mensagemErro.innerHTML = "<span style='color:red;'>Usuário ou senha incorretos.</span>";
-  return false; // Impede o envio do formulário
-}
+  // Criando o objeto de dados
+  const data = new URLSearchParams();
+  data.append("username", username);
+  data.append("password", password);
+
+  // Configurando a requisição para a API
+  fetch("http://localhost:8080/login", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: data
+  })
+  .then(response => {
+      if (response.ok) {
+          // Login bem-sucedido
+          return response.json();
+      } else {
+          // Falha no login
+          throw new Error("Usuário ou senha inválidos.");
+      }
+  })
+  .then(json => {
+      console.log("Login realizado com sucesso:", json);
+      alert("Login realizado com sucesso!");
+      // Redirecionar para outra página, se necessário
+      window.location.href = "inicial.html";
+  })
+  .catch(error => {
+      erroMensagem.textContent = error.message;
+      erroMensagem.style.color = "red";
+  });
+
+  // Impede o envio padrão do formulário
+  return false;
 }
