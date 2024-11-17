@@ -104,6 +104,12 @@ main {
 
 /* Conteúdo da página */
 
+.logo-header-blue {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
 .box-content {
     display: flex;
     justify-content: center;
