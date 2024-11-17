@@ -1,0 +1,70 @@
+@media only screen and (max-width: 1200px) {
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
+    header {
+        width: 0%;
+    }
+
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
+    main {
+        width: 100%;
+    }
+
+    /* Faz aparecer o logo azul do topo */
+    .logo-header-blue {
+        display: block;
+    }
+
+    /* Faz sumir a barra de navegação do topo */
+    .content {
+        display: none;
+    }
+
+    /* Faz os textos de cabeçalho ficarem um abaixo do outro  */
+    .tnc-r {
+        flex-direction: column;
+    }
+
+    /* Faz o texto "TIPOS DE NÃO CONFORMIDADES" ficar alinhado ao centro dentro da caixa que ele está */
+    .ncr-title {
+        text-align: center;
+    }
+
+    /* Faz desaparecer os rótulos do menu lateral */
+    .side-label {
+        display: none;
+    }
+
+    /* Faz a barra lateral aparecer emabixo da tela */
+    .sidebar {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+    }
+
+    /* Faz desaparecer o logo do fundo branco */
+    .sidebar h2 {
+        display: none;
+    }
+
+     /* Faz os itens do sidebar ficarem horizontalmente */
+     .sidebar ul {
+        flex-direction: row;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .tnc-r h3{
+        font-size: 15px;
+    }
+
+    .logo-header-blue {
+        display: flex;
+        justify-content: center;
+        height: 90px;
+    }
+}

@@ -38,8 +38,6 @@ function validarLogin() {
       }
   })
   .then(json => {
-      console.log("Login realizado com sucesso:", json);
-      alert("Login realizado com sucesso!");
       // Redirecionar para outra página, se necessário
       window.location.href = "inicial.html";
   })

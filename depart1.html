@@ -62,13 +62,14 @@
             </nav>
         </div>
     </header>
+
     <main>
         <section class="content">
             <h2 style="display: none;">
                 <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
             </h2>
             
-            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" class="casa" alt="Icon casa"
+            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF"  style="opacity: 0.6;" class="casa" alt="Icon casa"
                 width="auto" height="25rem">
             <h3>
                 <span style="opacity: 0.6;">
@@ -83,66 +84,58 @@
             <h3>Departamentos</h3>
         </section>
 
-        <div id="department-form" style="display: none;">
-            <input type="text" id="new-department-input" placeholder="Nome do novo departamento">
-            <div class="botoes">
-            <button id="submit-department">Adicionar</button>
-            <button id="cancel-department">Cancelar</button>
-            </div>
-        </div>
-        
         <section class="box-content">
             <div class="dep-content">
                 <div class="dep-a">
                     <h1>DEPARTAMENTOS</h1>
                 </div>
+
                 <div class="departamentos">
-
-                    <div class="departamentos-item">
-                        <p><a href="depart2.html">Diretoria Geral (DIGER)</a></p>
-                        <div class="departamentos-config">
-                            <div class="edit-options">
-                                <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem" class="edit-icon icon">
-                                <img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem" class="delete-icon icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="departamentos-item">
-                        <p><a href="depart3.html">Diretoria Administrativa e Financeira (DIRAF)</a></p>
-                        <div class="departamentos-config">
-                            <div class="edit-options">
-                                <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem" class="edit-icon icon">
-                                <img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem" class="delete-icon icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="departamentos-item">
-                        <p><a href="depart4.html">Diretoria Operacional (DIROP)</a></p>
-                        <div class="departamentos-config">
-                            <div class="edit-options">
-                                <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem" class="edit-icon icon">
-                                <img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem" class="delete-icon icon">
-                            </div>
-                        </div>
-                    </div>
-
-
+                    <table id="department-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Sigla</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="departments-list">
+                            <!-- Linhas serão adicionadas dinamicamente -->
+                        </tbody>
+                    </table>
+                    <button id="add-button">Adicionar Departamento</button>
                 </div>
-                <span class="btn-add">
-                    <button id="add-button">ADICIONAR</button>
-                </span>
             </div>
         </section>
     </main>
-    <div id="confirm-modal" style="display: none;">
+
+    <!-- Modal para Adicionar ou Editar -->
+
+    <div id="modal" class="hidden">
         <div class="modal-content">
-            <h3>Tem certeza que deseja excluir este departamento?</h3>
-            <button id="confirm-delete">Sim</button>
-            <button id="cancel-delete">Não</button>
+            <h2 id="modal-title">Adicionar Departamento</h2>
+            <input type="text" id="department-name" placeholder="Nome do Departamento">
+            <input type="text" id="department-sigla" placeholder="Sigla do Departamento">
+            <div class="botoes">
+                <button id="save-button">Salvar</button>
+                <button id="cancel-button">Cancelar</button>
+            </div>
         </div>
     </div>
 
-    <script src="assets/script/depart1.js"></script>
+    <!-- Modal de Confirmação de Exclusão -->
+
+    <div id="confirm-modal" class="hidden">
+        <div class="modal-content">
+            <p>Deseja realmente excluir este departamento?</p>
+            <div class="botoes">
+                <button id="confirm-delete">Sim</button>
+                <button id="cancel-delete">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="assets/script/depart1.js"></script>
 </body>
 
 </html>

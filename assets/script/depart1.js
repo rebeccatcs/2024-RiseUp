@@ -1,74 +1,197 @@
-const addButton = document.getElementById("add-button");
-const departamentosContainer = document.querySelector(".departamentos");
+const API_URL = "http://localhost:8080/api/departamentos";
+let editingId = null;
 
-// Função para adicionar eventos de edição e exclusão a um item de tarefa
-function addEventListenersToTaskItem(taskItem) {
-    const editButton = taskItem.querySelector(".edit-icon");
-    const deleteButton = taskItem.querySelector(".delete-icon");
-    const taskTitle = taskItem.querySelector("p");
+// Certifique-se de que o código é executado após o DOM ser carregado
+document.addEventListener("DOMContentLoaded", () => {
+    try {
+        loadDepartments();
 
-    // Evento de exclusão
-    deleteButton.addEventListener("click", () => {
-        departamentosContainer.removeChild(taskItem);
+        // Ocultar modais no início
+        const modal = document.getElementById("modal");
+        if (modal) {
+            modal.classList.add("hidden");
+        }
+
+        const confirmModal = document.getElementById("confirm-modal");
+        if (confirmModal) {
+            confirmModal.classList.add("hidden");
+        }
+
+        // Adiciona event listeners aos botões
+        const addButton = document.getElementById("add-button");
+        if (addButton) {
+            addButton.addEventListener("click", openModalToAdd);
+        }
+
+        // Configurar event listeners
+    const deleteButtons = document.querySelectorAll(".delete-button");
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const id = event.target.getAttribute("data-id"); // Certifique-se de usar data-id no botão
+            confirmDelete(id);
+        });
     });
 
-    // Evento de edição
-    editButton.addEventListener("click", () => {
-        const isEditing = taskTitle.isContentEditable;
-        taskTitle.contentEditable = !isEditing;
-        taskTitle.focus();
+    const cancelDeleteButton = document.getElementById("cancel-delete");
+    if (cancelDeleteButton) {
+        cancelDeleteButton.addEventListener("click", closeConfirmModal);
+    }
 
-        // Alterna a classe para indicar que o item está em edição
-        taskTitle.classList.toggle("editing", !isEditing);
-    });
-}
+        const saveButton = document.getElementById("save-button");
+        const cancelButton = document.getElementById("cancel-button");
+        const confirmDeleteButton = document.getElementById("confirm-delete");
 
-// Função para criar um novo item de tarefa dinamicamente
-function createTaskItem(title = "Título") {
-    const taskItem = document.createElement("div");
-    taskItem.classList.add("departamentos-item");
-
-    const taskTitle = document.createElement("p");
-    taskTitle.textContent = title;
-    taskTitle.contentEditable = false;
-
-    const configContainer = document.createElement("div");
-    configContainer.classList.add("departamentos-config");
-
-    const editOptions = document.createElement("div");
-    editOptions.classList.add("edit-options");
-
-    const editButton = document.createElement("img");
-    editButton.src = "https://img.icons8.com/?size=100&id=114092&format=png&color=000000";
-    editButton.alt = "Editar";
-    editButton.classList.add("edit-icon", "icon");
-
-    const deleteButton = document.createElement("img");
-    deleteButton.src = "https://img.icons8.com/?size=100&id=14237&format=png&color=000000";
-    deleteButton.alt = "Excluir";
-    deleteButton.classList.add("delete-icon", "icon");
-
-    editOptions.appendChild(editButton);
-    editOptions.appendChild(deleteButton);
-
-    configContainer.appendChild(editOptions);
-
-    taskItem.appendChild(taskTitle);
-    taskItem.appendChild(configContainer);
-
-    departamentosContainer.appendChild(taskItem);
-
-    addEventListenersToTaskItem(taskItem);  // Adiciona os eventos ao novo item
-}
-
-// Adiciona evento para criar novo item ao clicar no botão de adicionar
-addButton.addEventListener("click", () => {
-    createTaskItem();
+        if (saveButton) saveButton.addEventListener("click", saveDepartment);
+        if (cancelButton) cancelButton.addEventListener("click", closeModal);
+        if (confirmDeleteButton) confirmDeleteButton.addEventListener("click", deleteDepartment);
+        if (cancelDeleteButton) cancelDeleteButton.addEventListener("click", closeConfirmModal);
+    } catch (error) {
+        console.error("Erro ao configurar os event listeners:", error);
+    }
 });
 
-// Adiciona eventos de edição e exclusão para os itens já existentes na página
-console.log("Fazendo o registro nos existentes...");
-console.log(document.querySelectorAll(".departamentos-item"));
-document.querySelectorAll(".departamentos-item").forEach(addEventListenersToTaskItem);
+// Carregar departamentos
+async function loadDepartments() {
+    try {
+        const response = await fetch(API_URL);
 
-//1176 px 917px -> quebra de linha
+        if (!response.ok) {
+            throw new Error(`Erro ao acessar API: ${response.status} ${response.statusText}`);
+        }
+
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error("Resposta não é um JSON válido.");
+        }
+
+        const departments = await response.json();
+
+        const tableBody = document.getElementById("departments-list");
+        if (!tableBody) {
+            console.error("Tabela de departamentos não encontrada!");
+            return;
+        }
+
+        tableBody.innerHTML = "";
+
+        departments.forEach(department => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${department.nome}</td>
+                <td>${department.sigla}</td>
+                <td>
+                    <button class="edit-button" onclick="editDepartment(${department.id})"><img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000" alt="ícone edição" width="auto" height="25rem" class="edit-icon icon"></button>
+                    <button class="delete-button" onclick="confirmDelete(${department.id})"><img src="https://img.icons8.com/?size=100&id=14237&format=png&color=000000" alt="ícone excluir" width="auto" height="25rem" class="delete-icon icon">
+                            </div></button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar departamentos:", error);
+    }
+}
+
+// Abrir modal para adicionar
+function openModalToAdd() {
+    editingId = null;
+    document.getElementById("department-name").value = "";
+    document.getElementById("department-sigla").value = "";
+    document.getElementById("modal-title").innerText = "Adicionar Departamento";
+    document.getElementById("modal").classList.remove("hidden");
+}
+
+// Abrir modal para editar
+async function editDepartment(id) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`);
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar departamento: ${response.status} ${response.statusText}`);
+        }
+
+        const department = await response.json();
+
+        editingId = id;
+        document.getElementById("department-name").value = department.nome;
+        document.getElementById("department-sigla").value = department.sigla;
+        document.getElementById("modal-title").innerText = "Editar Departamento";
+        document.getElementById("modal").classList.remove("hidden");
+    } catch (error) {
+        console.error("Erro ao carregar departamento:", error);
+    }
+}
+
+// Salvar (criar ou editar)
+async function saveDepartment() {
+    const nome = document.getElementById("department-name").value;
+    const sigla = document.getElementById("department-sigla").value;
+
+    if (!nome || !sigla) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    const method = editingId ? "PUT" : "POST";
+    const url = editingId ? `${API_URL}/${editingId}` : API_URL;
+
+    try {
+        const response = await fetch(url, {
+            method,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nome, sigla }),
+        });
+
+        if (response.ok) {
+            alert(editingId ? "Departamento atualizado!" : "Departamento criado!");
+            closeModal();
+            loadDepartments();
+        } else {
+            alert("Erro ao salvar departamento.");
+        }
+    } catch (error) {
+        console.error("Erro ao salvar departamento:", error);
+    }
+}
+
+// Confirmar exclusão
+function confirmDelete(id) {
+    editingId = id;
+
+    // Certifique-se de que o modal está visível
+    const confirmModal = document.getElementById("confirm-modal");
+    if (confirmModal) {
+        confirmModal.classList.remove("hidden");
+    }
+}
+
+// Excluir departamento
+async function deleteDepartment() {
+    try {
+        const response = await fetch(`${API_URL}/${editingId}`, {
+            method: "DELETE",
+        });
+
+        if (response.ok) {
+            alert("Departamento excluído!");
+            closeConfirmModal();
+            loadDepartments();
+        } else {
+            alert("Erro ao excluir departamento.");
+        }
+    } catch (error) {
+        console.error("Erro ao excluir departamento:", error);
+    }
+}
+
+// Fechar modais
+function closeModal() {
+    document.getElementById("modal").classList.add("hidden");
+}
+
+function closeConfirmModal() {
+    const confirmModal = document.getElementById("confirm-modal");
+    if (confirmModal) {
+        confirmModal.classList.add("hidden");
+    }
+}
+
