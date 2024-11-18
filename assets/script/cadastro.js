@@ -1,52 +1,33 @@
 // Função para validar o cadastro
 function validarCadastro() {
-    // Obtendo os valores do formulário
-    const username = document.getElementById("Login").value;
-    const password = document.getElementById("Senha").value;
-  
-    // Mensagem de erro
-    const erroMensagem = document.getElementById("erroMensagem");
-    erroMensagem.textContent = ""; // Limpa a mensagem anterior
-  
-    // Validação simples de campos vazios
-    if (!username || !password) {
-        erroMensagem.textContent = "Por favor, preencha todos os campos.";
-        erroMensagem.style.color = "red";
-        return false;
+    var usuario = document.getElementById('Cadastro').value;
+    var senha = document.getElementById('Senha').value;
+    var confirmeSenha = document.getElementById('Confirme').value;
+    var mensagemErro = document.getElementById('erroMensagem');
+
+    // Limpar mensagem de erro anterior
+    mensagemErro.innerHTML = "";
+
+    // Verifica se os campos estão vazios
+    if (usuario === "" || senha === "" || confirmeSenha === "") {
+        mensagemErro.innerHTML = "<span style='color:red;'>Por favor, preencha todos os campos.</span>";
+        return false; // Impede o envio do formulário
     }
-  
-    // Criando o objeto de dados
-    const data = new URLSearchParams();
-    data.append("username", username);
-    data.append("password", password);
-  
-    // Configurando a requisição para a API
-    fetch("http://localhost:8080/register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: data
-    })
-    .then(response => {
-        if (response.ok) {
-            // Login bem-sucedido
-            return response.json();
-        } else {
-            // Falha no login
-            throw new Error("Usuário ou senha inválidos.");
-        }
-    })
-    .then(json => {
-        // Redirecionar para outra página, se necessário
+
+    // Verifica se a senha e a confirmação de senha são iguais
+     if (senha !== confirmeSenha) {
+        mensagemErro.innerHTML = "<span style='color:red;'>As senhas não coincidem. Tente novamente.</span>";
+        return false; // Impede o envio do formulário
+    }
+
+    // Verifica se as credenciais são 'admin' para exemplo
+    if (usuario === "adm@adm" && senha === "123") {
+        // Redireciona para a página inicial
         window.location.href = "inicial.html";
-    })
-    .catch(error => {
-        erroMensagem.textContent = error.message;
-        erroMensagem.style.color = "red";
-    });
-  
-    // Impede o envio padrão do formulário
-    return false;
-  }
-  
+        return false; // Impede o envio do formulário e a ação padrão
+    } else {
+        // Exibe mensagem de erro se as credenciais estiverem incorretas
+        mensagemErro.innerHTML = "<span style='color:red;'>Cadastro não realizado. Tente novamente.</span>";
+        return false; // Impede o envio do formulário
+    }
+}

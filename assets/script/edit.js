@@ -1,8 +1,3 @@
-
-
-
-
-
 // MENU MOBILE
 let btnAbrirMenu = document.getElementById('btn-abrir-menu')
 let btnFecharMenu = document.getElementById('btn-fechar-menu')
@@ -25,4 +20,3 @@ itensMenu.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     menu.classList.remove('abrir-menu')
 })
-// FIM MOBILE

@@ -65,53 +65,32 @@
 
     <main>
         <section class="content">
-                <h2 style="display: none;">
-                    <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
-                </h2>
-
-                <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Ícone 5"
-                    width="auto" height="25rem">
-                <h3>
-                    <span style="opacity: 0.6;">
-                        <a href="inicial.html">Home</a>
-                    </span>
-                </h3>
-
-                <span class="vertical-bar"></span>
-
-                <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=FFFFFF" alt="Ícone de usuário"
-                width="auto" height="25rem">
-                <h3>Usuários</h3>
-
+            <h2 style="display: none;">
+                <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
+            </h2>
+            <span style="opacity: 0.6;">
+                <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Ícone 5" width="auto" height="25rem">
+            </span>
+            <h3>
+                <span style="opacity: 0.6;">
+                    <a href="inicial.html">Home</a>
+                </span>
+            </h3>
+            <span class="vertical-bar"></span>
+            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=FFFFFF" alt="Ícone de usuário" width="auto" height="25rem">
+            <h3>Usuários</h3>
         </section>
 
-        
-       
-        <div class="add-edit-profile-container" style="display: none;">
-            <input type="text" id="profile-name-input" placeholder="Digite o nome do perfil" />
-            
-            
-            <div class="button-container">
-                <button id="save-profile-btn">Adicionar</button>
-                <button id="cancel-add-edit-btn">Cancelar</button>
-            </div>
-        </div>
-
-
-        
         <section class="box-content">
             <div class="main-content">
                 <h1>USUÁRIOS</h1>
-                
-              
                 <div id="profile-list">
                     <div class="perfil">
                         <a href="admin.html">
-                        <div class="perfil-info">
-                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png"
-                                alt="Administrador" class="perfil-icon">
-                            <span>Administrador</span>
-                        </div>
+                            <div class="perfil-info">
+                                <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png" alt="Administrador" class="perfil-icon">
+                                <span>Administrador</span>
+                            </div>
                         </a>
                         <div class="perfil-icons">
                             <i class="bi bi-pencil-square"></i>
@@ -120,8 +99,7 @@
                     </div>
                     <div class="perfil">
                         <div class="perfil-info">
-                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png"
-                                alt="Gerente de Setor" class="perfil-icon">
+                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png" alt="Gerente de Setor" class="perfil-icon">
                             <span>Gerente de Setor</span>
                         </div>
                         <div class="perfil-icons">
@@ -131,8 +109,7 @@
                     </div>
                     <div class="perfil">
                         <div class="perfil-info">
-                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png"
-                                alt="Controlador" class="perfil-icon">
+                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png" alt="Controlador" class="perfil-icon">
                             <span>Controlador</span>
                         </div>
                         <div class="perfil-icons">
@@ -142,8 +119,7 @@
                     </div>
                     <div class="perfil">
                         <div class="perfil-info">
-                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png"
-                                alt="Colaborador" class="perfil-icon">
+                            <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png" alt="Colaborador" class="perfil-icon">
                             <span>Colaborador</span>
                         </div>
                         <div class="perfil-icons">
@@ -152,26 +128,24 @@
                         </div>
                     </div>
                 </div>
-
-                
                 <div class="add-button">
                     <button class="add-profile-btn">ADICIONAR</button>
                 </div>
             </div>
-            <div id="confirm-modal">
-                <div class="modal-content">
-                    <h3>Tem certeza que deseja excluir este perfil?</h3>
-                    <div class="modal-buttons">
-                        <button id="confirm-delete-button">Sim</button>
-                        <button id="cancel-delete-button" class="cancel-button">Não</button>
-                    </div>
-                </div>
-            </div>
-           
-            </div>
         </section>
     </main>
 
+    <!-- Aba Modal (adicionada para interagir com o JavaScript) -->
+    <div class="aba-centralizada" id="aba-centralizada" style="display: none;">
+        <button id="fechar-aba">&times;</button>
+        <h3 id="aba-titulo">Título da Aba</h3>
+        <div id="aba-campos"></div> <!-- Os campos serão inseridos aqui -->
+        <div class="botoes">
+            <button id="confirmar-aba">Confirmar</button>
+        </div>
+    </div>
+
     <script src="assets/script/perfisdeacesso.js"></script>
 </body>
+
 </html>
