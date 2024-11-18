@@ -86,10 +86,6 @@ main {
     background-color: #123A8C;
 }
 
-.content img {
-    opacity: 0.6;
-}
-
 .content a {
     color: #fff;
 }
@@ -312,4 +308,116 @@ main {
 
 #cancel-add-edit-btn:hover {
     background-color: #c82333;  /* Tom mais escuro de vermelho ao passar o mouse */
+}
+
+/* Aba centralizada para adicionar, editar e excluir perfis */
+.aba-centralizada {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #164095; /* Azul escuro consistente com o tema */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* Inicialmente escondida */
+    z-index: 1000;
+    width: 400px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.aba-centralizada h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.aba-centralizada button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.aba-centralizada button:hover {
+    color: #bcd1fb;
+}
+
+.aba-centralizada #fechar-aba {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.aba-centralizada #aba-campos input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #164095; /* Azul escuro para contraste */
+    outline: none;
+}
+
+.aba-centralizada #aba-campos input::placeholder {
+    color: #ccc;
+}
+
+.aba-centralizada .botoes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.aba-centralizada .botoes button {
+    padding: 10px 20px;
+    background-color: #0d3688; /* Azul intermediário */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.aba-centralizada .botoes button:hover {
+    background-color: #ffffff;
+    color: #0d3688;
+}
+
+.aba-centralizada .botoes button.cancelar {
+    background-color: #b30000; /* Vermelho para o botão cancelar */
+}
+
+.aba-centralizada .botoes button.cancelar:hover {
+    background-color: #ff4d4d; /* Vermelho claro ao passar o mouse */
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 600px) {
+    .aba-centralizada {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .aba-centralizada #aba-campos input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .aba-centralizada h3 {
+        font-size: 18px;
+    }
+
+    .aba-centralizada .botoes button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }

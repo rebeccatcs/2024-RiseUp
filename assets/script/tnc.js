@@ -1,6 +1,23 @@
 const addButton = document.getElementById("add-button");
 const registrosContainer = document.querySelector(".registros");
 
+// Função para salvar itens no LocalStorage
+function salvarNoLocalStorage() {
+    const itens = [];
+    document.querySelectorAll(".registro-item.dynamic").forEach((taskItem) => {
+        const title = taskItem.querySelector("p").textContent;
+        const counter = taskItem.querySelector(".caixa-registros2").textContent;
+        itens.push({ title, counter });
+    });
+    localStorage.setItem("tasks", JSON.stringify(itens));
+}
+
+// Função para carregar itens do LocalStorage
+function carregarDoLocalStorage() {
+    const itensSalvos = JSON.parse(localStorage.getItem("tasks")) || [];
+    itensSalvos.forEach(({ title, counter }) => createTaskItem(title, counter));
+}
+
 // Função para adicionar eventos de edição e exclusão a um item de tarefa
 function addEventListenersToTaskItem(taskItem) {
     const editButton = taskItem.querySelector(".edit-icon");
@@ -10,6 +27,7 @@ function addEventListenersToTaskItem(taskItem) {
     // Evento de exclusão
     deleteButton.addEventListener("click", () => {
         registrosContainer.removeChild(taskItem);
+        salvarNoLocalStorage(); // Atualiza o LocalStorage após exclusão
     });
 
     // Evento de edição
@@ -20,13 +38,17 @@ function addEventListenersToTaskItem(taskItem) {
 
         // Alterna a classe para indicar que o item está em edição
         taskTitle.classList.toggle("editing", !isEditing);
+
+        if (isEditing) {
+            salvarNoLocalStorage(); // Salva alterações após edição
+        }
     });
 }
 
 // Função para criar um novo item de tarefa dinamicamente
-function createTaskItem(title = "Título") {
+function createTaskItem(title = "Título", counter = "0") {
     const taskItem = document.createElement("div");
-    taskItem.classList.add("registro-item");
+    taskItem.classList.add("registro-item", "dynamic"); // Adiciona classe 'dynamic' para itens dinâmicos
 
     const taskTitle = document.createElement("p");
     taskTitle.textContent = title;
@@ -37,7 +59,7 @@ function createTaskItem(title = "Título") {
 
     const caixaRegistros2 = document.createElement("div");
     caixaRegistros2.classList.add("caixa-registros2");
-    caixaRegistros2.textContent = "0";
+    caixaRegistros2.textContent = counter;
 
     const editOptions = document.createElement("div");
     editOptions.classList.add("edit-options");
@@ -63,17 +85,17 @@ function createTaskItem(title = "Título") {
 
     registrosContainer.appendChild(taskItem);
 
-    addEventListenersToTaskItem(taskItem);  // Adiciona os eventos ao novo item
+    addEventListenersToTaskItem(taskItem); // Adiciona os eventos ao novo item
 }
 
 // Adiciona evento para criar novo item ao clicar no botão de adicionar
 addButton.addEventListener("click", () => {
     createTaskItem();
+    salvarNoLocalStorage(); // Salva no LocalStorage após adicionar um novo item
 });
 
-// Adiciona eventos de edição e exclusão para os itens já existentes na página
-console.log("Fazendo o registro nos existentes...");
-console.log(document.querySelectorAll(".registro-item"));
-document.querySelectorAll(".registro-item").forEach(addEventListenersToTaskItem);
+// Adiciona eventos de edição e exclusão para os itens fixos na página
+document.querySelectorAll(".registro-item:not(.dynamic)").forEach(addEventListenersToTaskItem);
 
-//1176 px 917px -> quebra de linha
+// Carrega os itens do LocalStorage ao carregar a página
+window.onload = carregarDoLocalStorage;

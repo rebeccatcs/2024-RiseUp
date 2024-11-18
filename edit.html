@@ -7,6 +7,7 @@
     <title>Editar</title>
     <link rel="stylesheet" href="assets/css/edit.css">
     <link rel="stylesheet" href="assets/css/reset.css">
+    
     <link rel="shortcut icon" href="assets/images/fsph.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -64,65 +65,125 @@
     </header>
     <main>
         <section class="content">
-            <h2 style="display: none;">
+            <div class="btn-abrir-menu" id="btn-abrir-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <h2 class="logotipofsph">
                 <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
             </h2>
-            
-            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Icon casa"
-                width="auto" height="25rem">
-            <h3>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar-menu" id="btn-fechar-menu">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul id="itens-menu">
+                        <li>
+                            <a href="rnc.html">
+                                <img src="https://img.icons8.com/?size=100&id=60673&format=png&color=000000"
+                                    alt="Imagem de um círculo com sinal de exclamação em seu interior" width="auto"
+                                    height="25rem">
+                                <span>Chamados</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cnr.html">
+                                <img src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
+                                    alt="Imagem do sinal de adição" width="auto" height="25rem">
+                                <span>Criar chamado</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="perfisdeacesso.html">
+                                <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=000000"
+                                    alt="Imagem de um boneco" width="auto" height="25rem">
+                                <span>Usuários</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="depart1.html">
+                                <img src="https://img.icons8.com/?size=100&id=Ichz7JPUz9qU&format=png&color=000000"
+                                    alt="Imagem de uma engrenagem" width="auto" height="25rem">
+                                <span>Departamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="edit.html">
+                                <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000"
+                                    alt="Imagem de um lápis escrevendo em um papel" width="auto" height="25rem">
+                                <span>Editar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="overlay-menu" id="overlay-menu"></div>
+
+            <div class="icon-casa">
                 <span style="opacity: 0.6;">
-                    <a href="inicial.html">Home</a>
+                <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Icon casa"
+                    width="auto" height="25rem">
                 </span>
-            </h3>
+                <h3>
+                    <span style="opacity: 0.6;">
+                        <a href="inicial.html">Home</a>
+                    </span>
+                </h3>
 
-            <span class="vertical-bar"></span>
+                <span class="vertical-bar"></span>
 
-            <img src="https://img.icons8.com/?size=100&id=6697&format=png&color=FFFFFF" alt="Icon Editar" width="auto"
-                height="25rem">
-            <h3>Editar </h3>
+                <img src="https://img.icons8.com/?size=100&id=6697&format=png&color=FFFFFF" alt="Icon Editar"
+                    width="auto" height="25rem">
+                <h3>Editar </h3>
+            </div>
         </section>
 
         <section class="box-content">
             <div class="edt-content">
                 <h1>EDITAR</h1>
                 <div class="edt-container">
-                    <div class="edt-item">
-                        <p>Tipos de não conformidades</p>
-                        <div class="edit">
-                            <div class="edit-opction">
-                                <a href="tnc.html"><img
-                                    src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
-                                    alt="Avançar" width="auto" height="25rem"></a>
+                    <a href="tnc.html">
+                        <div class="edt-item">
+                            <p>Tipos de não conformidades</p>
+                            <div class="edit">
+                                <div class="edit-opction">
+                                    <img src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
+                                        alt="Avançar" width="auto" height="25rem">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="edt-item">
-                        <p>Graus de severidade</p>
-                        <div class="edit">
-                            <div class="edit-opction">
-                                <a href="gds.html"><img
-                                    src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
-                                    alt="Avançar" width="auto" height="25rem"></a>
+                    </a>
+                    <a href="gds.html">
+                        <div class="edt-item">
+                            <p>Graus de severidade</p>
+                            <div class="edit">
+                                <div class="edit-opction">
+                                    <img src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
+                                        alt="Avançar" width="auto" height="25rem">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="edt-item">
-                        <p>Status</p>
-                        <div class="edit">
-                            <div class="edit-opction">
-                                <a href="status.html"><img
-                                    src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
-                                    alt="Avançar" width="auto" height="25rem"></a>
+                    </a>
+                    <a href="status.html">
+                        <div class="edt-item">
+                            <p>Status</p>
+                            <div class="edit">
+                                <div class="edit-opction">
+                                    <img src="https://img.icons8.com/?size=100&id=7849&format=png&color=000000"
+                                        alt="Avançar" width="auto" height="25rem">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="gds.js"></script>
+    <script src="assets/script/edit.js"></script>
 </body>
 
 </html>
