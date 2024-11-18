@@ -107,6 +107,12 @@ main {
 
 /* Conteúdo da página */
 
+.logo-header-blue {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
 
 /*Começo da seção de Criar uma Não conformidade*/
 

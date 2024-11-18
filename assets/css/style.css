@@ -7,7 +7,6 @@ body {
 
 header {
     width: 100%;
-    height: 25%;
 }
 
 .contato {
@@ -17,14 +16,16 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 10px 3%;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .contato p {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 0.9rem;
 }
-
 
 .nav-bar {
     display: flex;
@@ -33,11 +34,18 @@ header {
     padding: 1.5rem 7rem;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
+    flex-wrap: wrap;
+}
+
+#logo {
+    max-width: 200px;
+    height: auto;
 }
 
 .botoes {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .botao {
@@ -47,7 +55,7 @@ header {
     font-size: 1rem;
     border: none;
     border-radius: 25px;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -57,64 +65,38 @@ header {
     color: #043087;
 }
 
-#contate {
-    background-color: white;
-    color: #164095;
-}
-
-#contate:hover {
-    background-color: #043087;
-    color: white;
-}
-
-/* Fim Header */
-
-
 /* Main */
 
 .tela-login {
     background-color: white;
-    width: min-content;
-    padding: 4rem;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
     border-radius: 15px;
-    margin: 3rem auto 0;
+    margin: 2rem auto;
 }
 
 .tela-login h2 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-#Login {
+#Login, #Senha {
     background-color: #F0F0F0;
     padding: 15px;
     letter-spacing: 1px;
     outline-color: #729DF5;
-    font-size: 15px;
-    border-color: #729DF5;
+    font-size: 1rem;
+    border: 1px solid #729DF5;
     border-radius: 5px;
     font-family: sans-serif;
     text-align: left;
-    width: 400px;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
-#Login::placeholder {
-    color: #3156A0;
-}
-
-#Senha {
-    background-color: #F0F0F0;
-    padding: 15px;
-    letter-spacing: 1px;
-    outline: none;
-    font-size: 15px;
-    border-color: #729DF5;
-    border-radius: 5px;
-    font-family: sans-serif;
-    text-align: left;
-    width: 400px;
-}
-
-#Senha::placeholder {
+#Login::placeholder, #Senha::placeholder {
     color: #3156A0;
 }
 
@@ -124,7 +106,7 @@ button {
     padding: 15px;
     width: 100%;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
 }
@@ -136,5 +118,3 @@ button:hover {
 #lembrar {
     margin-bottom: 1rem;
 }
-
-/* Fim Main */

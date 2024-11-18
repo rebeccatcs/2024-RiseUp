@@ -1,46 +1,20 @@
 @media only screen and (max-width: 1045px) {
 
-    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
     header {
         width: 0%;
     }
-
-    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
     main {
         width: 100%;
     }
-
     /* Faz aparecer o logo azul do topo */
     .logo-header-blue {
         display: block;
     }
-
     /* Faz sumir a barra de navegação do topo */
     .content {
         display: none;
-    }
-
-    .table-div {
-        display: flex;
-        width: 100%;
-        padding: 0 4%;
-        margin-top: 2rem;
-    }
-
-    /* Faz os textos de cabeçalho ficarem um abaixo do outro  */
-    .table-container {
-        flex-direction: column;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 130px;
-    }
-
-    /* Faz o texto "TIPOS DE NÃO CONFORMIDADES" ficar alinhado ao centro dentro da caixa que ele está */
-    .table-container h3 {
-        text-align: left;
-        width: fit-content;
     }
 
     /* Faz desaparecer os rótulos do menu lateral */
@@ -63,9 +37,35 @@
         display: none;
     }
 
-    /* Faz os itens do sidebar ficarem horizontalmente */
-    .sidebar ul {
+     /* Faz os itens do sidebar ficarem horizontalmente */
+     .sidebar ul {
         flex-direction: row;
+    }
+
+
+
+    .table-div {
+        display: flex;
+        width: 100%;
+        padding: 0 4%;
+        margin-top: 2rem;
+    }
+    /* Faz os textos de cabeçalho ficarem um abaixo do outro  */
+    .table-container {
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 130px;
+    }
+    /* Faz o texto "TIPOS DE NÃO CONFORMIDADES" ficar alinhado ao centro dentro da caixa que ele está */
+    .table-container h3 {
+        text-align: left;
+        width: fit-content;
+    }
+    .icon-casa {
+        display: none;
     }
 
 }

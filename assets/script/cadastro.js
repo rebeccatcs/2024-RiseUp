@@ -23,7 +23,7 @@ function validarCadastro() {
     // Verifica se as credenciais são 'admin' para exemplo
     if (usuario === "adm@adm" && senha === "123") {
         // Redireciona para a página inicial
-        window.location.href = "inicial.html";
+        window.location.href = "administrador/inicial.html";
         return false; // Impede o envio do formulário e a ação padrão
     } else {
         // Exibe mensagem de erro se as credenciais estiverem incorretas
