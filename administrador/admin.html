@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departamentos</title>
-    <link rel="stylesheet" href="assets/css/depart1.css">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     
     <link rel="shortcut icon" href="assets/images/fsph.png" type="image/x-icon">
@@ -28,49 +27,60 @@
                             <img src="https://img.icons8.com/?size=100&id=60673&format=png&color=000000"
                                 alt="Imagem de um círculo com sinal de exclamação em seu interior" width="auto"
                                 height="25rem">
+                            <span class="side-label">
                             Chamados
+                        </span>
                         </a>
                     </li>
                     <li>
                         <a href="cnr.html">
                             <img src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
                                 alt="Imagem do sinal de adição" width="auto" height="25rem">
-                            Criar chamado
-                        </a>
+                                <span class="side-label">
+                                    Criar chamado
+                                </span>
+                            </a>
                     </li>
                     <li>
                         <a href="perfisdeacesso.html">
                             <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=000000"
                                 alt="Imagem de um boneco" width="auto" height="25rem">
-                            Usuários
-                        </a>
+                                <span class="side-label">
+                                    Usuários
+                                </span>
+                            </a>
                     </li>
                     <li>
                         <a href="depart1.html">
                             <img src="https://img.icons8.com/?size=100&id=Ichz7JPUz9qU&format=png&color=000000"
                                 alt="Imagem de uma engrenagem" width="auto" height="25rem">
-                            Departamentos
-                        </a>
+                                <span class="side-label">
+                                    Departamentos
+                                </span>
+                            </a>
                     </li>
                     <li>
                         <a href="edit.html">
                             <img src="https://img.icons8.com/?size=100&id=114092&format=png&color=000000"
                                 alt="Imagem de um lápis escrevendo em um papel" width="auto" height="25rem">
-                            Editar
-                        </a>
+                                <span class="side-label">
+                                    Editar
+                                </span>
+                            </a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-
+    
     <main>
+        <section class="logo-header-blue">
+            <img src="assets/images/Logo empresa.png">
+        </section>
+        
         <section class="content">
-            <h2 style="display: none;">
-                <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
-            </h2>
             
-            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF"  style="opacity: 0.6;" class="casa" alt="Icon casa"
+            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Icon casa"
                 width="auto" height="25rem">
             <h3>
                 <span style="opacity: 0.6;">
@@ -80,63 +90,48 @@
 
             <span class="vertical-bar"></span>
 
-            <img src="https://img.icons8.com/?size=100&id=Ichz7JPUz9qU&format=png&color=FFFFFF" alt="Gear" width="auto"
-                height="25rem">
-            <h3>Departamentos</h3>
+            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=FFFFFF" alt="Ícone de usuário"
+                width="auto" height="25rem">
+            <a href="perfisdeacesso.html"><h3><span style="opacity: 0.6;">Usuários</span></h3></a>
+
+            <div class="vertical-bar"></div>
+
+            <h3>Administrador</h3>
         </section>
 
         <section class="box-content">
-            <div class="dep-content">
-                <div class="dep-a">
-                    <h1>DEPARTAMENTOS</h1>
+            <div class="usercontainer">
+                <div class="user-pic">
+                    <img src="assets/images/laviniamarques.png" id="userpic" width="auto" height="160rem">
+                </div>
+                <div class="user-info">
+                    <h2>Lavínia Marques</h2>
+                    <h4>Email:</h4>
+                    <p  id="email">lavinia.marques@souparreira.com.br</p>
+                    <h4>Departamento:</h4>
+                    <p>Coordenação Financeira</p>
+                    <h4>Perfil:</h4>
+                    <p>Administrador <b>(Chefe de departamento)</b></p>
+                </div>
+                <div class="config">
+                    <img src="https://img.icons8.com/?size=100&id=9110&format=png&color=000000" id="userpic"
+                        width="auto" height="25rem">
+                </div>
+            </div>
+            <div class="container">
+                <div class="tab" onclick="toggleTab()">
+                    <p>Não conformidades cadastradas</p>
+                    <img src="https://img.icons8.com/?size=100&id=15S8NtzAU4hO&format=png&color=000000"
+                        class="icon-seta" id="rotateIcon" width="auto" height="25rem">
                 </div>
 
-                <div class="departamentos">
-                    <table id="department-table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Sigla</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="departments-list">
-                            <!-- Linhas serão adicionadas dinamicamente -->
-                        </tbody>
-                    </table>
-                    <button id="add-button">Adicionar Departamento</button>
+                <div class="tabcont" id="tabContent">
+                    <p>Não há não conformidades registradas.</p>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Modal para Adicionar ou Editar -->
-
-    <div id="modal" class="hidden">
-        <div class="modal-content">
-            <h2 id="modal-title">Adicionar Departamento</h2>
-            <input type="text" id="department-name" placeholder="Nome do Departamento">
-            <input type="text" id="department-sigla" placeholder="Sigla do Departamento">
-            <div class="botoes">
-                <button id="save-button">Salvar</button>
-                <button id="cancel-button">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Confirmação de Exclusão -->
-
-    <div id="confirm-modal" class="hidden">
-        <div class="modal-content">
-            <p>Deseja realmente excluir este departamento?</p>
-            <div class="botoes">
-                <button id="confirm-delete">Sim</button>
-                <button id="cancel-delete">Não</button>
-            </div>
-        </div>
-    </div>
-
-    <script defer src="assets/script/depart1.js"></script>
+    <script src="assets/script/admin.js"></script>
 </body>
 
 </html>

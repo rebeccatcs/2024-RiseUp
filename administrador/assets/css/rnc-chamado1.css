@@ -83,10 +83,6 @@ main {
     background-color: #123A8C;
 }
 
-.casa {
-    opacity: 0.6;
-}
-
 .content a {
     color: #fff;
 }
@@ -102,93 +98,121 @@ main {
 /* Fim Barra superior */
 
 /* Conteúdo da página */
+.logo-header-blue {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
 
 .box-content {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;;
+
 }
 
-.rnc-content {
+.main-content {
     display: flex;
     flex-direction: column;
+
+    background-color: #fff;
+    padding: 1.2rem;
     width: 85%;
-    background-color: #F2F2F2;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    /* Permite rolagem se o conteúdo for maior que o contêiner */
+    position: relative;
     border-radius: 8px;
 }
 
-.upper-rnc {
-    display: flex;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
+.main-content h1 {
+    font-size: 1.3rem;
+    color: #979797;
+    width: 200px;
+    margin-bottom: 1rem;
 }
 
-.input-wrapper {
-    padding: 8px 12px;
-    min-width: 245px;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border: 2px solid #DADADA;
-    border-radius: 12px;
-    background-color: #ffffff;
-}
-
-.input-wrapper i {
-    color: #123A8C;
-}
-
-.input-wrapper input {
-    border: none;
-    border-radius: 10px;
-    height: 2.5rem;
-    font-size: large;
-}
-
-.input-wrapper input:focus-visible {
-    outline: none;
-}
-
-.rnc-container {
+.chamado-content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    font-size: large;
-    margin: 2rem 0;
+    margin-left: 3.5%;
+    width: 92%;
+    padding: 1.2rem 1.5rem;
+    gap: 2rem;
+    border-radius: 8px;
+    background-color: #E5E3E3;
 }
 
-.rnc-chamado {
+.chamado-item {
+    display: flex;
+    gap: 7%;
+    align-items: center;
+}
+
+.chamado-item>p {
+    width: 20%;
+}
+
+.descricao-box {
+    display: flex;
+    align-items: center;
+    width: 73%;
+    padding: 0 0.5rem;
+    background-color: #fbfbfb;
+    height: 2.5rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.descricao-menor {
+    width: 33%;
+    max-width: 12.5rem;
+}
+
+
+.barra-inferior{
     display: flex;
     justify-content: space-between;
-    padding: 0 1.2rem;
     align-items: center;
-    border-radius: 12px;
     width: 95%;
-    height: 4rem;
-    color: #123A8C;
-    background-color: #D9D9D9;
-    margin: auto;
-    transition: background-color 0.3s; /* Transição suave */
-    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    margin: 2rem auto 0;
 }
 
-.rnc-chamado:hover {
-background-color: #e8e8e8; /* Cor de fundo ao passar o mouse */
+.barra-inferior img{
+    margin-left: 1rem;
+}
+
+.barra-inferior img:hover{
+    cursor: pointer;
+}
+
+.barra-inferior button{
+    width: 10rem;
+    height: 2rem;
+    color: #979797;
+    border: 2px solid #DADADA;
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.barra-inferior button:hover{
+    color: #6d6d6d;
 }
 
 /* Fim Conteúdo da página */
 
 /* Fim Main */
 
+
 /* MOBILE */
+
+/* estilização do menu mobile */
 
 .logotipofsph {
     display: none;
 }
-
-/* estilização do menu mobile */
 
 .icon-casa {
     display: flex;
@@ -311,4 +335,24 @@ background-color: #e8e8e8; /* Cor de fundo ao passar o mouse */
         margin-left: -45px;
     }
 
+    /* conteúdo da página */
+    .main-content {
+        margin-bottom: 2rem;
+    }
+
+    .chamado-content {
+        padding: 1.2rem .8rem;
+    }
+
+    .descricao-menor {
+        margin-left: -1%;
+    }
+
+    .chamado-item {
+        gap: 16%;
+    }
+
+    .barra-inferior img{
+        margin-left: 2rem;
+    }
 }

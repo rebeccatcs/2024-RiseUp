@@ -112,6 +112,11 @@ main {
 /* Fim Barra superior */
 
 /* Conteúdo da página */
+.logo-header-blue {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
 
 .box-content {
     display: flex;

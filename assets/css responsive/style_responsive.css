@@ -1,0 +1,34 @@
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .contato {
+        flex-direction: column;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 5%;
+    }
+
+    #logo {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contato p {
+        font-size: 0.8rem;
+    }
+
+    .tela-login {
+        padding: 1rem;
+    }
+
+    .tela-login h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}

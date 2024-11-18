@@ -39,7 +39,7 @@ function validarLogin() {
   })
   .then(json => {
       // Redirecionar para outra página, se necessário
-      window.location.href = "inicial.html";
+      window.location.href = "administrador/inicial.html";
   })
   .catch(error => {
       erroMensagem.textContent = error.message;

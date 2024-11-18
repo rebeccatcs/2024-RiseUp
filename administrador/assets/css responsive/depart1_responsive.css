@@ -1,0 +1,128 @@
+@media only screen and (max-width: 1200px) {
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
+    header {
+        width: 0%;
+    }
+
+    /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */ 
+    main {
+        width: 100%;
+    }
+
+    /* Faz aparecer o logo azul do topo */
+    .logo-header-blue {
+        display: block;
+    }
+
+    /* Faz sumir a barra de navegação do topo */
+    .content {
+        display: none;
+    }
+
+    /* Faz os textos de cabeçalho ficarem um abaixo do outro */
+    .dep-content {
+        flex-direction: column;
+    }
+
+    /* Faz o texto "TIPOS DE NÃO CONFORMIDADES" ficar alinhado ao centro dentro da caixa que ele está */
+    .dep-a {
+        text-align: center;
+    }
+
+    /* Faz desaparecer os rótulos do menu lateral */
+    .sidebar .side-label {
+        display: none !important;
+    }
+
+    /* Faz a barra lateral aparecer embaixo da tela */
+    .sidebar {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+    }
+
+    /* Faz desaparecer o logo do fundo branco */
+    .sidebar h2 {
+        display: none;
+    }
+
+    /* Faz os itens do sidebar ficarem horizontalmente */
+    .sidebar ul {
+        flex-direction: row;
+    }
+
+    /* Alinha o botão "Adicionar Departamento" ao centro */
+    .box-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Caso tenha outros elementos */
+    }
+
+    #add-button {
+        margin-top: 20px; /* Adiciona espaço entre o botão e outros elementos */
+    }
+}
+
+    #modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+
+    .modal-content input {
+        width: 102%; /* Inputs ocupam quase toda a largura */
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .botoes {
+        display: flex;
+        justify-content: space-between; /* Garante que os botões tenham espaço entre si */
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .botoes button {
+        flex: 1; /* Faz os botões ocuparem a mesma proporção */
+        margin: 0 5px; /* Espaçamento entre os botões */
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+@media only screen and (max-width: 500px) {
+
+    .logo-header-blue {
+        display: flex;
+        justify-content: center;
+        height: 90px;
+    }
+    .modal-content {
+        width: 80%; /* Reduz o tamanho do modal em telas menores */
+    }
+
+    .botoes button {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+        padding: 8px 10px;
+    }
+    /* Ajustes adicionais para telas menores */
+    #add-button {
+        width: 100%;       /* Ajusta a largura do botão */
+        font-size: 16px;  /* Reduz o tamanho do texto */
+
+    
+    }
+}
+
+
