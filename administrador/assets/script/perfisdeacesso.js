@@ -138,3 +138,9 @@ addProfileBtn.addEventListener('click', () => {
 
 // Carregar perfis do LocalStorage ao iniciar a página
 carregarPerfisDoLocalStorage();
+
+const adminPerfil = document.getElementById("admin")
+
+adminPerfil.addEventListener('click', () => {
+    window.location.href = "admin.html";
+})
