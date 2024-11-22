@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaborador</title>
+    <link rel="stylesheet" href="assets/css/gestor.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css responsive/admin_responsive.css">
+    
+    <link rel="shortcut icon" href="assets/images/fsph.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <!-- Título da barra lateral com um logotipo -->
+            <h2>
+                <img src="assets/images/iconfsph.jpg" alt="Logotipo" width="auto" height="85rem">
+            </h2>
+            <!-- Lista de ícones de navegação -->
+            <nav>
+                <ul>
+                    <div class="home-icon">
+                        <li>
+                            <a href="inicialgestor.html">
+                                <img src="https://img.icons8.com/?size=100&id=14096&format=png&color=000000" alt="Imagem de uma casa"
+                                width="auto" height="25rem">
+                            </a>
+                        </li>
+                    </div>
+                    <li>
+                        <a href="rncgestor.html">
+                            <img src="https://img.icons8.com/?size=100&id=60673&format=png&color=000000"
+                                alt="Imagem de um círculo com sinal de exclamação em seu interior" width="auto"
+                                height="25rem">
+                            <span class="side-label">
+                            Chamados
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cnrgestor.html">
+                            <img src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000"
+                                alt="Imagem do sinal de adição" width="auto" height="25rem">
+                                <span class="side-label">
+                                    Criar chamado
+                                </span>
+                            </a>
+                    </li>
+                    <li>
+                        <a href="perfisdeacessogestor.html">
+                            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=000000"
+                                alt="Imagem de um boneco" width="auto" height="25rem">
+                                <span class="side-label">
+                                    Usuários
+                                </span>
+                            </a>
+                    </li>
+                    <li>
+                        <a href="depart1gestor.html">
+                            <img src="https://img.icons8.com/?size=100&id=Ichz7JPUz9qU&format=png&color=000000"
+                                alt="Imagem de uma engrenagem" width="auto" height="25rem">
+                                <span class="side-label">
+                                    Departamentos
+                                </span>
+                            </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="logo-header-blue">
+            <img src="assets/images/Logo empresa.png">
+        </section>
+        
+        <section class="content">
+            
+            <img src="https://img.icons8.com/?size=100&id=9zcV0gKAozhn&format=png&color=FFFFFF" alt="Icon casa"
+                width="auto" height="25rem">
+            <h3>
+                <span style="opacity: 0.6;">
+                    <a href="inicialgestor.html">Home</a>
+                </span>
+            </h3>
+
+            <span class="vertical-bar"></span>
+
+            <img src="https://img.icons8.com/?size=100&id=uOoIUTYvxnso&format=png&color=FFFFFF" alt="Ícone de usuário"
+                width="auto" height="25rem">
+            <a href="perfisdeacessogestor.html"><h3><span style="opacity: 0.6;">Usuários</span></h3></a>
+
+            <div class="vertical-bar"></div>
+
+            <h3>Colaborador</h3>
+        </section>
+
+        <section class="box-content">
+            <div class="usercontainer">
+                <div class="user-pic">
+                    <img src="assets/images/icon_user.webp" id="userpic" width="auto" height="160rem">
+                </div>
+                <div class="user-info">
+                    <h2>Nome do Colaborador</h2>
+                    <h4>Email:</h4>
+                    <p  id="email">user@souparreira.com.br</p>
+                    <h4>Departamento:</h4>
+                    <p>Coordenação Financeira</p>
+                    <h4>Perfil:</h4>
+                    <p>Colaborador <b>(Chefe de departamento)</b></p>
+                </div>
+                <div class="config">
+                    <img src="https://img.icons8.com/?size=100&id=9110&format=png&color=000000" id="userpic"
+                        width="auto" height="25rem">
+                </div>
+            </div>
+            <div class="container">
+                <div class="tab" onclick="toggleTab()">
+                    <p>Não conformidades cadastradas</p>
+                    <img src="https://img.icons8.com/?size=100&id=15S8NtzAU4hO&format=png&color=000000"
+                        class="icon-seta" id="rotateIcon" width="auto" height="25rem">
+                </div>
+
+                <div class="tabcont" id="tabContent">
+                    <p>Não há não conformidades registradas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/script/colaborador.js"></script>
+</body>
+
+</html>
