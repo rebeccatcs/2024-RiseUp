@@ -8,6 +8,7 @@
     /* Faz a barra lateral branca ficar sem largura e a área central azul ocupar todo o espaço da tela */
     main {
         width: 100%;
+        height: 100%;
     }
 
     /* Faz aparecer o logo azul do topo */
@@ -33,6 +34,7 @@
         bottom: 0;
         height: 60px;
         width: 100%;
+        z-index: 10;
     }
 
     /* Faz desaparecer o logo do fundo branco */
@@ -45,38 +47,49 @@
         flex-direction: row;
     }
 
-    .popup-content {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        width: 70%;
-        height: 18%;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .buttons-editar {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        justify-content: right;
-    }
-
 }
 
-@media only screen and (max-width: 528px) {
-
+@media only screen and (max-width: 814px) {
     .logo-header-blue {
         display: flex;
         justify-content: center;
         height: 90px;
     }
 
-    .edt-button {
-        justify-content: center;
+    .usercontainer {
+        width: 95%;
     }
 
+    .container {
+        width: 95%;
+    }
+    
+}
+
+@media only screen and (max-width: 584px) {
+    .usercontainer p {
+        font-size: 11px;
+        width: 300px;
+    }
+
+    .usercontainer img {
+        width: 120px;
+        height: 120px;
+        margin-left: 0.5rem;
+    }
+
+    .config img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tab p {
+        font-size: 13.5px;
+    }
+
+    .config {
+        margin-left: 0;
+        margin-right: 5px;
+        margin-bottom: 10rem;
+    }
 }

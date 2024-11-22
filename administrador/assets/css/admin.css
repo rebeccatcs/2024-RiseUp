@@ -160,12 +160,10 @@ main {
     align-items: center;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .tab p {
     margin-left: 1rem;
-}
-.tab img {
-    margin-left: 32rem;
 }
 
 .tabcont {
