@@ -15,7 +15,7 @@ function validarCadastro() {
     }
 
     // Verifica se a senha e a confirmação de senha são iguais
-     if (senha !== confirmeSenha) {
+    if (senha !== confirmeSenha) {
         mensagemErro.innerHTML = "<span style='color:red;'>As senhas não coincidem. Tente novamente.</span>";
         return false; // Impede o envio do formulário
     }
@@ -25,41 +25,31 @@ function validarCadastro() {
         // Redireciona para a página inicial
         window.location.href = "administrador/inicial.html";
         return false; // Impede o envio do formulário e a ação padrão
-    } else {
-        // Exibe mensagem de erro se as credenciais estiverem incorretas
-        mensagemErro.innerHTML = "<span style='color:red;'>Cadastro não realizado. Tente novamente.</span>";
-        return false; // Impede o envio do formulário
-    }
+    } 
 
     // Verifica se as credenciais são 'colab' para exemplo
     if (usuario === "colab@colab" && senha === "123") {
         // Redireciona para a página inicial
         window.location.href = "colaborador/inicialcolab.html";
         return false; // Impede o envio do formulário e a ação padrão
-    } else {
-        // Exibe mensagem de erro se as credenciais estiverem incorretas
-        mensagemErro.innerHTML = "<span style='color:red;'>Cadastro não realizado. Tente novamente.</span>";
-        return false; // Impede o envio do formulário
-    }
-
+    } 
+    
     // Verifica se as credenciais são 'control' para exemplo
     if (usuario === "control@control" && senha === "123") {
         // Redireciona para a página inicial
         window.location.href = "controlador/inicialcontrol.html";
         return false; // Impede o envio do formulário e a ação padrão
-    } else {
-        // Exibe mensagem de erro se as credenciais estiverem incorretas
-        mensagemErro.innerHTML = "<span style='color:red;'>Cadastro não realizado. Tente novamente.</span>";
-        return false; // Impede o envio do formulário
-    }
-    
+    } 
 
+    
     // Verifica se as credenciais são 'gestor' para exemplo
     if (usuario === "gestor@gestor" && senha === "123") {
         // Redireciona para a página inicial
         window.location.href = "gestor/inicialgestor.html";
         return false; // Impede o envio do formulário e a ação padrão
-    } else {
+    } 
+
+    else {
         // Exibe mensagem de erro se as credenciais estiverem incorretas
         mensagemErro.innerHTML = "<span style='color:red;'>Cadastro não realizado. Tente novamente.</span>";
         return false; // Impede o envio do formulário
