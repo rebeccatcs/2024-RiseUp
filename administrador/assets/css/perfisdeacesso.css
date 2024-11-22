@@ -177,7 +177,30 @@ main {
     color: #007bff; /* Muda a cor do ícone ao passar o mouse */
 }
 
+.buttons-editar {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: right;
+}
+
 .add-profile-btn {
+    margin-top: auto; /* Empurra o botão para baixo */
+    background-color: #5a6268; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor branca para o texto */
+    border: none;
+    border-radius: 1rem;
+    width: 15rem;
+    height: 3rem;
+    font-weight: bold;
+}
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.voltar-profile-btn {
     margin-top: auto; /* Empurra o botão para baixo */
     background-color: #d5d6d8; /* Cor de fundo do botão */
     color: #636161; /* Cor cinza para o texto */
@@ -187,7 +210,23 @@ main {
     height: 3rem;
     font-weight: bold;
 }
-.add-button {
+.voltar-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.edt-profile-btn {
+    margin-top: auto; /* Empurra o botão para baixo */
+    background-color: #d5d6d8; /* Cor de fundo do botão */
+    color: #636161; /* Cor cinza para o texto */
+    border: none;
+    border-radius: 1rem;
+    width: 15rem;
+    height: 3rem;
+    font-weight: bold;
+}
+.edt-button {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -405,24 +444,3 @@ main {
     background-color: #ff4d4d; /* Vermelho claro ao passar o mouse */
 }
 
-/* Ajustes para responsividade */
-@media (max-width: 600px) {
-    .aba-centralizada {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .aba-centralizada #aba-campos input {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .aba-centralizada h3 {
-        font-size: 18px;
-    }
-
-    .aba-centralizada .botoes button {
-        font-size: 12px;
-        padding: 8px 15px;
-    }
-}
