@@ -8,6 +8,7 @@ body {
 
 /* Side Bar */
 
+
 header {
     width: 15%;
     height: 100vh;
@@ -86,16 +87,6 @@ main {
     background-color: #123A8C;
 }
 
-.icon-casa {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.casa {
-    opacity: 0.6;
-}
-
 .content a {
     color: #fff;
 }
@@ -103,12 +94,13 @@ main {
 .vertical-bar {
     width: 2px;
     height: 22px;
-    background-color: white;
+    background-color: #fff;
     margin: 0 10px;
     transform: rotate(28deg);
 }
 
 /* Fim Barra superior */
+
 
 /* Conteúdo da página */
 .logo-header-blue {
@@ -121,83 +113,125 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-    margin-bottom: 1rem;
 }
 
-.rnc-content {
+.dep-content {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
     width: 85%;
-    background-color: #F2F2F2;
+    padding: 5px 0;
     border-radius: 8px;
+    gap: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.upper-rnc {
-    display: flex;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
-}
-
-.input-wrapper {
-    padding: 8px 12px;
-    min-width: 245px;
-    width: 40%;
+.dep-a {
     display: flex;
     align-items: center;
-    gap: 6px;
-    border: 2px solid #DADADA;
-    border-radius: 12px;
-    background-color: #ffffff;
+    padding: 0 2rem;
+    justify-content: space-between;
 }
 
-.input-wrapper i {
-    color: #123A8C;
+.dep-a h1 {
+    font-size: 1.3rem;
+    color: #979797;
+    width: 400px;
+    margin-top: 1rem;
 }
 
-.input-wrapper input {
-    border: none;
-    border-radius: 10px;
-    height: 2.5rem;
+.aber-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .6rem;
+    margin-top: 0.3rem;
+}
+
+.aber-title h3 {
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+.caixa-depart-abe {
+    color: black;
+    margin-top: 0.3rem;
+    background-color: #164095;
+    width: 30px;
+    height: 30px;
+    border-radius: 0.3rem;
+}
+
+.caixa-depart-aut {
+    color: black;
+    margin-top: 0.3rem;
+    background-color: #FFC822;
+    width: 30px;
+    height: 30px;
+    border-radius: 0.3rem;
+}
+
+.dep-content p {
     font-size: large;
 }
 
-.input-wrapper input:focus-visible {
-    outline: none;
-}
 
-.rnc-container {
+.departamentos {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    font-size: large;
-    margin: 2rem 0;
+    width: 95%;
+    margin: auto;
+    gap: 2rem;
+
 }
 
-.rnc-chamado {
+#department-table th {
+    padding: 10px 4%;
+    border-radius: 10px;
+    background-color: #123A8C;
+    color: #ffffff;
+}
+
+#department-table tbody {
+    border-radius: 10px;
+    background-color: #DADADA;
+    color: #000;
+}
+
+.depart-item {
+    display: flex;
+    flex: row;
+}
+
+.departamentos-item {
     display: flex;
     justify-content: space-between;
-    padding: 0 1.2rem;
+    height: 3rem;
+    padding: 0 5px;
+    flex-direction: row;
+    border: 2px solid #DADADA;
+    border-radius: 0.5rem;
     align-items: center;
-    border-radius: 12px;
-    width: 95%;
-    height: 4rem;
-    color: #123A8C;
-    background-color: #D9D9D9;
-    margin: auto;
-    transition: background-color 0.3s; /* Transição suave */
-    cursor: pointer; /* Muda o cursor para indicar interatividade */
 }
 
-.rnc-chamado:hover {
-background-color: #e8e8e8; /* Cor de fundo ao passar o mouse */
+.departamentos-config {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.edit-options {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem
 }
 
 /* Fim Conteúdo da página */
 
 /* Fim Main */
 
-/* MOBILE */
-
-.logotipofsph {
-    display: none;
+.no-permission {
+    color: gray;
+    font-style: italic;
 }

@@ -17,14 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusField = document.getElementById("status");
 
     let nonConformities = [];
-    let editIndex = null;
 
     // Carregar dados do Local Storage
     loadNonConformities();
 
     // Exibir tela de criação
     createButton.addEventListener("click", () => {
-        editIndex = null;
         resetForm();
         toggleSaveButton(true);
         initialScreen.style.display = "none";
@@ -37,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initialScreen.style.display = "block";
     });
 
-    // Salvar ou editar uma não conformidade
+    // Salvar uma nova não conformidade
     saveButton.addEventListener("click", () => {
         const title = titleField.value.trim();
         const description = descriptionField.value.trim();
@@ -64,11 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             status,
         };
 
-        if (editIndex !== null) {
-            nonConformities[editIndex] = nonConformity;
-        } else {
-            nonConformities.push(nonConformity);
-        }
+        nonConformities.push(nonConformity);
 
         saveToLocalStorage();
         renderNonConformities();
@@ -86,51 +80,29 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = "Nenhuma não conformidade registrada.";
             nonConformitiesList.appendChild(message);
         } else {
-            nonConformities.forEach((nonConformity, index) => {
+            nonConformities.forEach((nonConformity) => {
                 const li = document.createElement("li");
                 li.className = "nonConformity-item";
 
-                const contentDiv = document.createElement("div");
-                contentDiv.innerHTML = `
-                    <strong>${nonConformity.title}</strong>
-                    <p>${nonConformity.description}</p>
-                    <p><em>Requerente:</em> ${nonConformity.requerente}</p>
-                    <p><em>Tipo:</em> ${nonConformity.type}</p>
-                    <p><em>Status:</em> ${nonConformity.status}</p>
-                    <p><em>Severidade:</em> ${nonConformity.severity}</p>
+                li.innerHTML = `
+                    <div>
+                        <strong>${nonConformity.title}</strong>
+                        <p>${nonConformity.description}</p>
+                        <p><em>Requerente:</em> ${nonConformity.requerente}</p>
+                        <p><em>Tipo:</em> ${nonConformity.type}</p>
+                        <p><em>Status:</em> ${nonConformity.status}</p>
+                        <p><em>Severidade:</em> ${nonConformity.severity}</p>
+                    </div>
                 `;
 
-                const buttonContainer = document.createElement("div");
-                buttonContainer.className = "button-container";
-
-                // Botão Editar
-                const editButton = document.createElement("button");
-                editButton.className = "edit-button";
-                editButton.textContent = "Editar";
-                editButton.addEventListener("click", () => {
-                    editIndex = index;
+                // Evento para exibir detalhes
+                li.addEventListener("click", () => {
                     loadToForm(nonConformity);
-                    toggleSaveButton(true);
+                    toggleSaveButton(false);
                     initialScreen.style.display = "none";
                     creationScreen.style.display = "block";
                 });
 
-                // Botão Excluir
-                const deleteButton = document.createElement("button");
-                deleteButton.className = "delete-button";
-                deleteButton.textContent = "Excluir";
-                deleteButton.addEventListener("click", (event) => {
-                    event.stopPropagation(); // Evita que o clique no botão dispare o evento do item
-                    nonConformities.splice(index, 1);
-                    saveToLocalStorage();
-                    renderNonConformities();
-                });
-
-                buttonContainer.appendChild(editButton);
-                buttonContainer.appendChild(deleteButton);
-
-                li.appendChild(contentDiv);
-                li.appendChild(buttonContainer);
                 nonConformitiesList.appendChild(li);
             });
         }

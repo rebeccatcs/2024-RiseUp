@@ -288,11 +288,10 @@ main {
 }
 
 .modal-content {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 15px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #confirm-delete, #cancel-delete {

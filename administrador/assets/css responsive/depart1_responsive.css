@@ -69,23 +69,25 @@
     #add-button {
         margin-top: 20px; /* Adiciona espaço entre o botão e outros elementos */
     }
-}
+
+    .departamentos {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #department-table th {
+        padding: 10px;
+    }
 
     #modal {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
+        width: 90%;
     }
 
-
     .modal-content input {
-        width: 102%; /* Inputs ocupam quase toda a largura */
-        margin: 10px 0;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        width: 130%; /* Inputs ocupam quase toda a largura */
     }
 
     .botoes {
@@ -97,12 +99,10 @@
     .botoes button {
         flex: 1; /* Faz os botões ocuparem a mesma proporção */
         margin: 0 5px; /* Espaçamento entre os botões */
-        padding: 10px 15px;
-        font-size: 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
     }
+}
+
+
 
 
 @media only screen and (max-width: 500px) {
@@ -117,15 +117,13 @@
     }
 
     .botoes button {
-        font-size: 14px; /* Ajusta o tamanho da fonte */
+        font-size: 18px; /* Ajusta o tamanho da fonte */
         padding: 8px 10px;
     }
     /* Ajustes adicionais para telas menores */
     #add-button {
         width: 100%;       /* Ajusta a largura do botão */
         font-size: 16px;  /* Reduz o tamanho do texto */
-
-    
     }
 }
 

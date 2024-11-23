@@ -50,9 +50,42 @@
     .home-icon {
         display: inherit;
     }
-
+    
     .box-content {
         margin-bottom: 70px;
+    }
+
+    .nc-content {
+        padding: 18px;
+        width: 90%;
+    }
+
+    .itens-geral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .upper-rnc {
+        margin-left: 0;
+    }
+
+    .input-wrapper {
+        padding: 8px;
+        min-width: 300px;
+        gap: 6px;
+    }
+
+    #nonConformitiesList li {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #nonConformitiesList li button {
+        width: 120px;
     }
 }
 
@@ -63,7 +96,4 @@
         height: 90px;
     }
 
-    .main-content p {
-        font-size: 13.4px;
-    }
 }
